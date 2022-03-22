@@ -1,0 +1,27 @@
+.txt_line { 
+    width: 10px; 
+    padding:0 5px; 
+    overflow:hidden; 
+    text-overflow:ellipsis; 
+    white-space:nowrap; 
+}
+
+.carousel-inner{
+    max-height: 800px;
+    overflow: hidden;
+}
+
+.cropping img{
+    max-height: initial;
+    margin-top: -15%;
+}
+
+table{
+    border-spacing: 10px;
+    border-collapse: separate;
+}
+
+table td {
+    width: 30px;
+    background: #ccc;
+}

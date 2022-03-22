@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- 설정파일에서 사용할 프로퍼티의 파일의 경로 지정: classpath -->
+	<properties resource="config/mybatis/db.properties"/>
+	
+	<!-- SQL의 결과를 담을 VO 객체들의 별칭을 설정하여 사용의 편의를 도모 --> 
+	<typeAliases>
+ 		<typeAlias alias="user" type="com.ssafit.dto.User" />
+ 		<typeAlias alias="video" type="com.ssafit.dto.Video" />
+ 		<typeAlias alias="review" type="com.ssafit.dto.Review" />
+	</typeAliases>
+	
+	 
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!-- // 하나하나의 sql을 담고 있는 mapper.xml에 접근하기 위해 필요
+	// 여러개를 추가할수있음 -->
+	<mappers>
+		<mapper resource="config/mapper/user.xml"/>
+		<mapper resource="config/mapper/video.xml"/>
+		<mapper resource="config/mapper/review.xml"/>
+	</mappers>
+</configuration>
